@@ -27,6 +27,11 @@ pca = PCA(n_components = 2)
 X_train = pca.fit_transform(X_train)
 X_test = pca.transform(X_test)
 explained_variance = pca.explained_variance_ratio_
+
+#Cumulative Variance explains
+var1=np.cumsum(np.round(pca.explained_variance_ratio_, decimals=4)*100)
+plt.plot(var1)
+
 '''It shows how much each new feature explains variance.'''
 
 '''Logistic Regression'''
